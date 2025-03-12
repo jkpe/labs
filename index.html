@@ -197,6 +197,11 @@
                 margin-top: 0.5rem;
             }
         }
+        
+        .project-title {
+            color: #2563eb; /* Blue color */
+            font-weight: bold; /* Optional: make it bold */
+        }
     </style>
 </head>
 <body>
@@ -215,7 +220,7 @@
             <tbody>
                 <!-- Project 1 -->
                 <tr>
-                    <td class="project-title-cell" data-label="Project">Spaces Presigned URL Helper</td>
+                    <td class="project-title-cell" data-label="Project"><span class="project-title">Spaces:</span> Presigned URL Helper</td>
                     <td class="project-description-cell" data-label="Description">Generates presigned URLs for secure, temporary access to objects in your DigitalOcean Spaces Object Storage Bucket.</td>
                     <td class="project-links-cell" data-label="Links">
                         <a href="https://do-spaces-presigned-helper-lfzz7.ondigitalocean.app/" class="project-link">
@@ -227,10 +232,31 @@
                         </a>
                     </td>
                 </tr>
+
+                <!-- Project 2 -->
+                <tr>
+                    <td class="project-title-cell" data-label="Project"><span class="project-title">App Platform:</span> Services Quick Glance</td>
+                    <td class="project-description-cell" data-label="Description">View thousands of App Platform apps at once, viewing their services, instance slug size, container count, if autoscale is enabled, and for how many instances.</td>
+                    <td class="project-links-cell" data-label="Links">
+                        <a href="https://app-platform-viewer-jn5um.ondigitalocean.app/" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            View
+                        </a>
+                        <a href="" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code
+                        </a>
+                    </td>
+                </tr>
                 
                 <!-- Project 2 -->
                 <tr>
-                    <td class="project-title-cell" data-label="Project">Advanced Settings for Managed Databases</td>
+                    <td class="project-title-cell" data-label="Project"><span class="project-title">Managed Databases:</span> Advanced Settings </td>
                     <td class="project-description-cell" data-label="Description">Customize your DigitalOcean managed database configuration and generate the corresponding API request.</td>
                     <td class="project-links-cell" data-label="Links">
                         <a href="https://do-db-config-ui-zgu8q.ondigitalocean.app/" class="project-link">
@@ -251,7 +277,7 @@
                 
                 <!-- Project 3 -->
                 <tr>
-                    <td class="project-title-cell" data-label="Project">GenAI Platform Pricing Calculator</td>
+                    <td class="project-title-cell" data-label="Project"><span class="project-title">GenAI Platform:</span> Pricing Calculator</td>
                     <td class="project-description-cell" data-label="Description">Calculate your estimated costs for building GPU-powered AI agents with fully-managed deployment.</td>
                     <td class="project-links-cell" data-label="Links">
                         <a href="https://hammerhead-app-vxjd6.ondigitalocean.app/" class="project-link">
@@ -266,7 +292,7 @@
                 
                 <!-- Project 4 -->
                 <tr>
-                    <td class="project-title-cell" data-label="Project">Firewall Manager</td>
+                    <td class="project-title-cell" data-label="Project"><span class="project-title">Cloud Firewalls:</span> Manager</td>
                     <td class="project-description-cell" data-label="Description">Generate the API command to create and delete advanced firewall rules, including deny rules.</td>
                     <td class="project-links-cell" data-label="Links">
                         <a href="https://api-ui-firewall-7ki46.ondigitalocean.app/" class="project-link">
