@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalOcean Solutions Toolbox</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --row-hover: #f3f4f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        
+        p.description {
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Projects Table */
+        .projects-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .projects-table th {
+            text-align: left;
+            padding: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+            border-bottom: 2px solid var(--border);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .projects-table td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        
+        .projects-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .projects-table tr {
+            transition: background-color 0.2s ease;
+        }
+        
+        .projects-table tr:hover {
+            background-color: var(--row-hover);
+        }
+        
+        .project-title-cell {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .project-description-cell {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 500px;
+        }
+        
+        .project-links-cell {
+            white-space: nowrap;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            margin-right: 0.5rem;
+            background: var(--bg-secondary);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        
+        .project-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Responsive Table */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .projects-table {
+                display: block;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .projects-table thead {
+                display: none;
+            }
+            
+            .projects-table tbody, 
+            .projects-table tr {
+                display: block;
+            }
+            
+            .projects-table tr {
+                margin-bottom: 1.5rem;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                overflow: hidden;
+                background-color: var(--bg-secondary);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            }
+            
+            .projects-table td {
+                display: block;
+                text-align: left;
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .projects-table td:last-child {
+                border-bottom: none;
+            }
+            
+            .projects-table td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                margin-right: 1rem;
+                color: var(--text-secondary);
+            }
+            
+            .project-links-cell {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .project-link {
+                margin-right: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DigitalOcean Solutions Toolbox</h1>
+        <p class="description">A collection of DigitalOcean tools and projects I've built leveraging language models and AI to tackle technical challenges.</p>
+        
+        <table class="projects-table">
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Description</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Project 1 -->
+                <tr>
+                    <td class="project-title-cell" data-label="Project">DigitalOcean Spaces Presigned URL Helper</td>
+                    <td class="project-description-cell" data-label="Description">This tool generates pre-signed URLs for secure, temporary access to objects in your DigitalOcean Spaces Bucket. Pre-signed URLs are useful for allowing time-limited uploads and downloads without requiring users to have DigitalOcean credentials.</td>
+                    <td class="project-links-cell" data-label="Links">
+                        <a href="https://do-spaces-presigned-helper-lfzz7.ondigitalocean.app/" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            View
+                        </a>
+                    </td>
+                </tr>
+                
+                <!-- Project 2 -->
+                <tr>
+                    <td class="project-title-cell" data-label="Project">Configure Advanced Settings for DigitalOcean Managed Databases</td>
+                    <td class="project-description-cell" data-label="Description">Use this tool to customize your DigitalOcean managed database configuration and generate the corresponding API request.</td>
+                    <td class="project-links-cell" data-label="Links">
+                        <a href="https://do-db-config-ui-zgu8q.ondigitalocean.app/" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            View
+                        </a>
+                        <a href="https://github.com/jkpe/do-db-config-ui" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code
+                        </a>
+                    </td>
+                </tr>
+                
+                <!-- Project 3 -->
+                <tr>
+                    <td class="project-title-cell" data-label="Project">DigitalOcean GenAI Platform Pricing Calculator</td>
+                    <td class="project-description-cell" data-label="Description">Calculate your estimated costs for building GPU-powered AI agents with fully-managed deployment.</td>
+                    <td class="project-links-cell" data-label="Links">
+                        <a href="https://hammerhead-app-vxjd6.ondigitalocean.app/" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            View
+                        </a>
+                    </td>
+                </tr>
+                
+                <!-- Project 4 -->
+                <tr>
+                    <td class="project-title-cell" data-label="Project">DigitalOcean Firewall Manager</td>
+                    <td class="project-description-cell" data-label="Description">Generate the API command to create and delete advanced firewall rules, including deny rules.</td>
+                    <td class="project-links-cell" data-label="Links">
+                        <a href="https://api-ui-firewall-7ki46.ondigitalocean.app/" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            View
+                        </a>
+                    </td>
+                </tr>
+                
+                <!-- Project 5 -->
+                <tr>
+                    <td class="project-title-cell" data-label="Project">Controlling Eight Sleep with an ATOMS3 Dev Kit</td>
+                    <td class="project-description-cell" data-label="Description">I had the idea to use the ATOMS3 Dev Kit to create a small, dedicated button for temperature control. This tiny ESP32 device features an integrated display and button, making it perfect for the task.</td>
+                    <td class="project-links-cell" data-label="Links">
+                        <a href="https://www.jackpearce.co.uk/posts/eight-sleep-atoms3-control/" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                            View
+                        </a>
+                        <a href="https://github.com/jkpe/eight-sleep-m5stack-atoms3" class="project-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Footer -->
+        <div class="footer" style="text-align: center; color: #666; padding: 2rem 0;">
+            <p style="font-size: 0.875rem;">
+                Thoughtfully crafted by Jack Pearce, DigitalOcean Solutions Architect.
+                <span role="img" aria-label="heart" style="color: #ef4444;">❤️</span>
+            </p>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">
+                <a 
+                    href="https://github.com/jkpe"
+                    style="color: #2563eb; text-decoration: none;"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
